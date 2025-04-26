@@ -21,8 +21,8 @@
                 path = path.replace(repo, '');
             }
             
-            // Redirecionar para index.html com o caminho como hash
-            window.location.href = window.location.origin + repo + '/index.html#' + path;
+            // Redirecionar para index.html com o caminho como parâmetro de consulta
+            window.location.href = window.location.origin + repo + '/index.html?redirect=' + encodeURIComponent(path);
         })();
     </script>
 </head>

@@ -3,10 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/nutriflow/">
     <title>NutriFlow - Portal do Nutricionista</title>
     <meta name="description" content="Sistema de gestão para nutricionistas" />
     <meta name="author" content="NutriFlow" />
     <script type="text/javascript">
+      // Verificar se há um parâmetro de redirecionamento na URL
+      (function() {
+        var redirect = new URLSearchParams(window.location.search).get('redirect');
+        if (redirect) {
+          // Remover o parâmetro da URL e navegar para o caminho
+          history.replaceState(null, null, redirect);
+        }
+      })();
+      
       // Script para configurar o React Router com base no hash da URL
       (function() {
         // Verificar se veio de um redirecionamento com hash
@@ -18,21 +28,14 @@
       })();
     </script>
 
-    <meta property="og:title" content="flow-patient-portal" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="NutriFlow" />
+    <meta property="og:description" content="Sistema de gestão para nutricionistas" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     <script type="module" crossorigin src="./assets/index-COOVa_m9.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CYrT8c8I.css">
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   </body>
 </html>
